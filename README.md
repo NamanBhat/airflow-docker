@@ -10,6 +10,6 @@ An Apache Airflow docker image for the Airflow Helm chart
 
 1. Install [Docker](https://www.docker.com/).
 
-2. Download: `docker pull NamanBhat/airtflow-docker`
+2. Download: `docker pull NamanBhat/airflow-docker`
 
-   (alternatively, you can build an image from Dockerfile: `docker build -t="NamanBhat/airtflow-docker" github.com/NamanBhat/airflow-docker`)
+   (alternatively, you can build an image from Dockerfile: `docker build -t="NamanBhat/airtlow-docker" github.com/NamanBhat/airflow-docker`)
