@@ -39,6 +39,7 @@ RUN set -ex \
         python3-requests \
         default-libmysqlclient-dev \
         apt-utils \
+        git \
         curl \
         rsync \
         netcat \
@@ -130,8 +131,9 @@ FROM airflow-rs as airflow-example-dags
 
 RUN set -ex \
     && mkdir -p ${AIRFLOW_HOME}/dags \
-    && cd /usr/local/airflow/dags \
-    && curl -L -s -N https://github.com/NamanBhat/dags \
+    && cd /usr/local/airflow/ \
+    && git clone https://github.com/NamanBhat/dags \
+    && cd dags \
     && curl -L -s -N https://github.com/apache/incubator-airflow/raw/master/airflow/contrib/example_dags/example_kubernetes_operator.py -o example_kubernetes_operator.py \
     && curl -L -s -N https://github.com/apache/incubator-airflow/raw/master/airflow/example_dags/example_bash_operator.py -o example_bash_operator.py \
     && curl -L -s -N https://github.com/apache/incubator-airflow/raw/master/airflow/example_dags/example_branch_operator.py -o example_branch_operator.py \
